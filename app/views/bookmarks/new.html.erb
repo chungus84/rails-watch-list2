@@ -1,0 +1,8 @@
+<div class="container">
+  <h2>Add a movie to <%= @list.name%></h2>
+  <%= simple_form_for [@list, @bookmark] do |f| %>
+    <%= f.input :comment, placeholder: "Enter a comment about the movie" %>
+    <%= f.association :movie, prompt: 'Select a movie', input_html: {data: { controller: 'select' }}  %>
+    <%= f.submit class: "btn btn-primary" %>
+  <% end %>
+</div>
